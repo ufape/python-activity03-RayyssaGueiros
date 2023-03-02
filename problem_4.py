@@ -25,8 +25,22 @@ Output(s):
 
 
 def main():
-    pass  # your code here
+  
+  def quarto(a):
+    fib = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+    for i in range(len(fib)):
+        x = i + 1
+        if(sum(fib[i:x]) == a):
+            del fib[i:]
+    y = str(fib)
+    chars = ["[", "]", ","]
+    res = y.translate(str.maketrans({ord(x): '' for x in chars}))
+    return print("A série de Fibonacci até " + str(a) + " é: " + res)
 
+  print("Série de Fibonacci")
+  print("=-=-=-=-=-=-=-=-=-\n")
+  a = int(input("Digite o valor inteiro (0 < N < 46): "))
+  quarto(a)
 
 if __name__ == '__main__':
-    main()
+  main()

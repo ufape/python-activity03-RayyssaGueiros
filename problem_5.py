@@ -30,8 +30,22 @@ A sequência é: 1 2 3
 
 
 def main():
-    pass  # your code here
+  x = 1
 
+  while(True):
+    x = int(input("Digite um valor para X (ou 0 para sair): "))
+    if(x != 0):
+        list = []
+        a = 0
+        for i in range(x):
+            a = a + 1
+            list.append(a)
+        y = str(list)
+        chars = ["[", "]", ","]
+        res = y.translate(str.maketrans({ord(x): '' for x in chars}))
+        print("A sequência até " + str(x) + " é " + res)
+    else:
+        break
 
 if __name__ == '__main__':
-    main()
+  main()

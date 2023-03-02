@@ -4,7 +4,6 @@
 # UAG00098
 # Problem Set 3 - Problem 1
 # Description:
-
 """
 Inputs, Processes and Output (IPO)
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -29,8 +28,29 @@ A soma dos números ímpares entre 15 e 12 é: 13
 
 
 def main():
-    pass  # your code here
+
+  def primeiro(a, b):
+    lista = []
+    if (a > b):
+      d = a
+      a = b
+      b = d
+    c = a + 1
+    lista.extend([c])
+    while (c < b - 1):
+      lista.extend([c + 1])
+      c = c + 1
+    for i in range(len(lista)):
+      if (lista[i] % 2 == 0):
+        lista[i] = 0
+    return print("A soma dos números ímpares entre " + str(a) + " e " +
+                 str(b) + " é: " + str(sum(lista)))
+
+  x = int(input("Digite um valor inteiro para X: "))
+  y = int(input("Digite um valor inteiro para Y: "))
+
+  primeiro(x, y)
 
 
 if __name__ == '__main__':
-    main()
+  main()

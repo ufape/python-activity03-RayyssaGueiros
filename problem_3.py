@@ -66,8 +66,32 @@ Percentual de salmão: 25.00%
 
 
 def main():
-    pass  # your code here
 
+  def terceiro(a):
+    c = []
+    s = []
+    r = []
+    for i in range(a):
+      t = input("Tipo: ")
+      b = int(input("Quantidade: "))
+      if(t == "C"):
+        c.append(b)
+      elif(t == "S"):
+        s.append(b)
+      elif(t == "R"):
+        r.append(b)
+    soma_total = sum(c) + sum(r) + sum(s)
+    pc = (sum(c)*100)/soma_total
+    pr = (sum(r)*100)/soma_total
+    ps = (sum(s)*100)/soma_total
+    r1 = "{:.2f}".format(pc)
+    r2 = "{:.2f}".format(pr)
+    r3 = "{:.2f}".format(ps)
+    return print("Total: " + str(soma_total) + " amostras."), print("Total de cenouras: " + str(sum(c)) + "."), print("Total de rabanetes: " + str(sum(r)) + "."), print("Total de salmões: " + str(sum(s)) + "."), print("Percentual de cenouras: " + str(r1) + "%"), print("Percentual de rabanetes: " + str(r2) + "%"), print("Percentual de salmões: " + str(r3) + "%")
+    
+  a = int(input("Quantas amostras: "))
 
+  terceiro(a)    
+  
 if __name__ == '__main__':
     main()
